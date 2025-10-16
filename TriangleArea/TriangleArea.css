@@ -1,0 +1,17 @@
+.inputForm
+{
+    border-radius: 8px;
+}
+
+.betis
+{
+    background-image: linear-gradient(to bottom right, green, white);
+}
+
+.betisBG
+{
+    background-image: url(banderaBetis.png);
+    background-repeat: no-repeat;
+    /* background-position: center; */
+    background-size: cover;
+}
