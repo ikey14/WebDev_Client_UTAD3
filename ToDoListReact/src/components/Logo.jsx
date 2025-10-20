@@ -9,7 +9,7 @@ import './ToDo.css'
 export default function Logo({altText, imgSrc})
 {
     return(<>
-    <img class = "Logo" src = {imgSrc} alt = {altText}/>
+    <img className = "Logo" src = {imgSrc} alt = {altText}/>
     </>)
     
 }
