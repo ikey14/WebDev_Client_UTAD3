@@ -1,0 +1,8 @@
+
+.Logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 150px;    /* Adjust as needed */
+  height: auto;    /* Keeps original aspect ratio */
+}
