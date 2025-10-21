@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import FormToDo from './FormToDo';
+import ToDo from './ToDo';
 
 //ListToDo TASK LIST
     //Lista dónde se juntat todos los ToDo
@@ -10,10 +12,12 @@ export default function ListToDo()
 
     //task.id === id ? { ...task, complete: !task.complete } : task
 
-    const ChangeTaskStatus = (id) => {setTasks};
+    const AddTask = (task) => {setTasks([...tasks, task])};
+    const ChangeTaskStatus = (id) => {setTasks(tasks.map(task => task.id === id ? { ...task, complete: !task.complete } : task));};
     const KillTask = (id) => {setTasks(tasks.filter(task => task.id !== id));};
 
-    return(<>
+    return(<div>
+    <FormToDo onFormSubmit = {AddTask}/>
     <div className="list-todo-container">
         {tasks.map((task) => (
             <ToDo 
@@ -26,5 +30,5 @@ export default function ListToDo()
             />
         ))}
     </div>
-    </>)
+    </div>)
 }

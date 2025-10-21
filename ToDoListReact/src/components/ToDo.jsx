@@ -1,4 +1,4 @@
-//import { useState } from 'react';
+import { useState } from 'react';
 
 //ToDo TASK
     //Bloque de construcción básico para ListToDo.
@@ -6,16 +6,11 @@
 
 export default function ToDo({id, taskText, complete, changeTaskStatus, killTask})
 {
-    // function ChangeTaskStatus()
-    // {
-    //     setIsDone(prev => !prev);
-    // }
-
-    return(<>
+    return(<div>
     <button onClick = {() => changeTaskStatus(id)}>
         <span style={{textDecoration: complete ? "line-through" : "none"}}>{taskText}</span>
-        <button onClick = {() => killTask(id)}>✖</button>
     </button>
-    </>)
+    <button onClick = {() => killTask(id)}>✖</button>
+    </div>)
 
 }

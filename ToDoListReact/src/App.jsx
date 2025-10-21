@@ -13,7 +13,7 @@ function App()
       
       <Logo altText = "Viva el Betis" imgSrc = "real-betis-logo.png" />
       {/* <ToDo task = "Testing" /> */}
-      <FormToDo />
+      {/* <FormToDo /> */}
       <ListToDo />
 
     </>)
