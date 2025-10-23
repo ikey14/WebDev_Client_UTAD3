@@ -18,6 +18,7 @@ export default function FormToDo({onFormSubmit})
       taskText: input,
       completed: false
     }
+    setInput("");
     onFormSubmit(newTask) //onSubmit es una prop
   }
 
