@@ -7,10 +7,10 @@ import { useState } from 'react';
 export default function ToDo({id, taskText, complete, changeTaskStatus, killTask})
 {
     return(<div>
-    <button onClick = {() => changeTaskStatus(id)}>
+    <button className = "toDoButton" onClick = {() => changeTaskStatus(id)}>
         <span style={{textDecoration: complete ? "line-through" : "none"}}>{taskText}</span>
     </button>
-    <button onClick = {() => killTask(id)}>✖</button>
+    <button className = "killToDoButton" onClick = {() => killTask(id)}><span className = "killToDoSpan">✖</span></button>
     </div>)
 
 }

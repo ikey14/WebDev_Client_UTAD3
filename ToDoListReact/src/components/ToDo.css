@@ -6,3 +6,42 @@
   width: 150px;    /* Adjust as needed */
   height: auto;    /* Keeps original aspect ratio */
 }
+
+.Logo:hover
+{
+  filter: drop-shadow(0 0 2em rgb(130, 255, 130));
+}
+
+.inputToDo 
+{
+  background-image: linear-gradient(to top right, rgb(169, 169, 169), rgb(130, 255, 130));
+}
+
+.buttonFormToDo
+{
+  background-image: linear-gradient(to top right, rgb(130, 255, 130), rgb(169, 169, 169));
+}
+
+.toDoButton
+{
+  background-image: linear-gradient(to top right, rgb(130, 255, 130), rgb(0, 0, 0));
+}
+
+.killToDoButton
+{
+  background-image: url("Sevilla_Logo.png");
+  background-size: cover;      /* Optional: scales the image to fully cover the button */
+  background-position: center; /* Optional: centers the image */
+  background-repeat: no-repeat;/* Optional: prevents tiling */
+}
+
+.killToDoButton:hover
+{
+  filter: drop-shadow(0 0 2em rgb(255, 33, 33));
+}
+
+.killToDoSpan
+{
+  color: black;
+  font-size: large;
+}

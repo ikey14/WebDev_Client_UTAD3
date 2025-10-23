@@ -28,9 +28,10 @@ export default function FormToDo({onFormSubmit})
         type = 'text'
         placeholder = 'Describe task'
         name = 'newTask'
+        value = {input}
         onChange = {handleChange}
       />
-      <button>ADD TASK</button>
+      <button className = "buttonFormToDo">ADD TASK</button>
     </form>
 
     </div>);
