@@ -7,13 +7,13 @@ import TrainForm from './components/TrainForm'
 import PayForm from './components/PayForm'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [formState, setFormState] = useState(1)
 
   return(<>
   
-    <BaseForm />
-    <TrainForm />
-    <PayForm />
+    {formState == 1 && <BaseForm changeState = {setFormState} />}
+    {formState == 2 && <TrainForm changeState = {setFormState} />}
+    {formState == 3 && <PayForm changeState = {setFormState} />}
   
   </>)
 }

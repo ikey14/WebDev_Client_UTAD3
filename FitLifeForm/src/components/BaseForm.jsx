@@ -1,9 +1,21 @@
 import { useForm } from "react-hook-form";
+import { useState } from "react";
 
-const BaseForm = () => {
+import TrainForm from './TrainForm'
+
+export default function BaseForm({changeState}){
     const { register, formState: { errors }, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
-    return (
+    //const [showTrainForm, setShowTrainForm] = useState(false);
+
+    const onSubmit = (data) => {
+        
+        //setShowTrainForm(true);
+        //add to local storage
+        console.log(data);
+        changeState(2);
+    }
+    
+    return (<>
         <form onSubmit={handleSubmit(onSubmit)}>
         <div>
             <label>Name</label>
@@ -23,9 +35,9 @@ const BaseForm = () => {
         </div>
         <input type="submit" />
         </form>
-    );
+        
+    </>);
 }
-export default BaseForm;
 
 
 

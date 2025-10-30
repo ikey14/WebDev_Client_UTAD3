@@ -1,9 +1,18 @@
 import { useForm } from "react-hook-form";
+import { useState } from "react";
 
-const TrainForm = () => {
+import PayForm from './PayForm'
+
+export default function TrainForm({changeState}) {
     const { register, formState: { errors }, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
-    return (
+
+    const onSubmit = (data) => {
+        
+        //setShowPayForm(true);
+        changeState(3);
+        console.log(data);
+    }
+    return (<>
         <form onSubmit={handleSubmit(onSubmit)}>
         <div>
             <label>Prefered Training Type</label>
@@ -30,9 +39,9 @@ const TrainForm = () => {
         </div>
         <input type = "submit" />
         </form>
-    );
+
+    </>);
 }
-export default TrainForm;
 
 
 

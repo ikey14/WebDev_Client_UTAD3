@@ -1,8 +1,10 @@
 import { useForm } from "react-hook-form";
+import { useState } from "react";
 
-const PayForm = () => {
+export default function PayForm(changeState) {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const onSubmit = data => console.log(data);
+    
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
         <div>
@@ -26,7 +28,6 @@ const PayForm = () => {
         </form>
     );
 }
-export default PayForm;
 
 
 
