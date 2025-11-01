@@ -49,7 +49,7 @@ export default function APICall({changeState})
 
     return(<>
         <h1>{message}</h1>
-        <div><button /*onClick = {changeState(1)}*/>Retry</button></div>
+        {/* <div><button onClick = {changeState(1)}>Retry</button></div> */}
         
     </>)
 }
