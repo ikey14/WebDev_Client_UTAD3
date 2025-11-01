@@ -1,17 +1,22 @@
 import { useForm } from "react-hook-form";
-import { useState } from "react";
+//import { useState } from "react";
 
 import PayForm from './PayForm'
 
 export default function TrainForm({changeState}) {
-    const { register, formState: { errors }, handleSubmit } = useForm();
+
+    const saved = localStorage.getItem('reg');
+    const defaultValues = saved ? JSON.parse(saved) : {};
+
+    const { register, handleSubmit, formState: { errors } } = useForm({defaultValues});
 
     const onSubmit = (data) => {
-        
-        //setShowPayForm(true);
+        //add to local storage
+        console.log(JSON.stringify(data));
+        localStorage.setItem("reg", JSON.stringify(data));
         changeState(3);
-        console.log(data);
     }
+
     return (<>
         <form onSubmit={handleSubmit(onSubmit)}>
         <div>

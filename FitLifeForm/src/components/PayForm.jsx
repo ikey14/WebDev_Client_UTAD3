@@ -1,9 +1,24 @@
 import { useForm } from "react-hook-form";
-import { useState } from "react";
+//import { useState } from "react";
 
-export default function PayForm(changeState) {
-    const { register, formState: { errors }, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
+export default function PayForm({changeState}) {
+
+    const saved = localStorage.getItem('reg');
+    const defaultValues = saved ? JSON.parse(saved) : {};
+
+    const { register, handleSubmit, formState: { errors } } = useForm({defaultValues});
+
+    const onSubmit = (data) => {
+        
+        //setShowPayForm(true);
+        console.log(JSON.stringify(data));
+        localStorage.setItem("reg", JSON.stringify(data));
+        //Send to API component so that it calls to the "server"
+        changeState(4);
+    }
+
+    
+    
     
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -24,7 +39,7 @@ export default function PayForm(changeState) {
             <input {...register('owner', { required: true })} />
             {errors.owner?.type === 'required' && "Owner is required"}
         </div>
-        <input type="submit" />
+        <input type = "submit" />
         </form>
     );
 }

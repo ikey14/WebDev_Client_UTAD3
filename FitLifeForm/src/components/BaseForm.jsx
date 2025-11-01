@@ -11,7 +11,9 @@ export default function BaseForm({changeState}){
         
         //setShowTrainForm(true);
         //add to local storage
-        console.log(data);
+        console.log(JSON.stringify(data));
+        localStorage.setItem("reg", JSON.stringify(data));
+        //console.log(data);
         changeState(2);
     }
     
